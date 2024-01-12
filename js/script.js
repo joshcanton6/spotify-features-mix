@@ -36,6 +36,7 @@ async function redirect() {
                 code: urlParams.get("code"),
                 redirect_uri: redirect_uri
             }), headers: {
+                "content-type": "application/x-www-form-urlencoded",
                 "Authorization": "Basic " + btoa(client_id + ":51ec60463d874c4c906640ee91c4146d")
             }
         }).then(
