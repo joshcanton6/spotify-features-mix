@@ -1,6 +1,6 @@
-const home = "https://joshcanton6.github.io"
+const home = "https://joshcanton6.github.io/spotify-features-mix"
 const client_id = "7cf492aacf9b49daa0367620797dc1fb";
-const redirect_uri = home + "/spotify-features-mix/redirect";
+const redirect_uri = home + "/redirect";
 
 function login() {
     const scope = "user-read-private" +
