@@ -1,0 +1,60 @@
+:root {
+    --spotify-green: #1DB954;
+    --spotify-white: #FFFFFF;
+    --spotify-black: #191414;
+}
+
+body {
+    background-color: var(--spotify-black);
+    color: var(--spotify-white);
+    font-family: sans-serif;
+}
+
+.container {
+    padding-bottom: 150px;
+}
+
+.center-content-narrow {
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    width: 40%;
+}
+
+.p-home {
+    font-size: 25px;
+}
+
+.button {
+    background-color: var(--spotify-green);
+    border-radius: 50px;
+    color: var(--spotify-white);
+    font-size: 25px;
+    font-weight: bold;
+    padding: 25px;
+    text-align: center;
+    text-decoration: none;
+}
+
+footer {
+    background-color: var(--spotify-black);
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+.footer-links {
+    width: 80%;
+    margin: auto;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+a {
+    color: var(--spotify-green);
+}
