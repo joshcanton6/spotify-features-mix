@@ -15,5 +15,6 @@ function login() {
         "?client_id=" + client_id +
         "&response_type=code" +
         "&redirect_uri=" + encodeURIComponent(redirect_uri) +
-        "&scope=" + encodeURIComponent(scope);
+        "&scope=" + encodeURIComponent(scope) +
+        "&show_dialog=true";
 }
