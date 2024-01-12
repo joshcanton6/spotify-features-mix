@@ -1,5 +1,6 @@
-client_id = "7cf492aacf9b49daa0367620797dc1fb";
-redirect_uri = "https://joshcanton6.github.io/spotify-features-mix/redirect";
+const home = "https://joshcanton6.github.io"
+const client_id = "7cf492aacf9b49daa0367620797dc1fb";
+const redirect_uri = home + "/spotify-features-mix/redirect";
 
 function login() {
     const scope = "user-read-private" +
@@ -17,4 +18,36 @@ function login() {
         "&redirect_uri=" + encodeURIComponent(redirect_uri) +
         "&scope=" + encodeURIComponent(scope) +
         "&show_dialog=true";
+}
+
+async function redirect() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has("error")) {
+        document.getElementById("redirect_message").innerHTML = "Error: " + urlParams.get("error");
+    }
+
+    if (urlParams.has("code")) {
+        document.getElementById("redirect_message").innerHTML = "Successful redirect";
+
+        var token = await fetch("https://accounts.spotify.com/api/token", {
+            method: "POST",
+            body: JSON.stringify({
+                grant_type: "authorization_code",
+                code: urlParams.get("code"),
+                redirect_uri: redirect_uri
+            }), headers: {
+                "Authorization": "Basic " + btoa(client_id + ":51ec60463d874c4c906640ee91c4146d")
+            }
+        }).then(
+            (response) => response.json()
+        ).then(
+            (json) => JSON.parse(JSON.stringify(json))
+        );
+
+        sessionStorage.setItem("access_token", token.access_token);
+        sessionStorage.setItem("refresh_token", token.refresh_token);
+        sessionStorage.setItem("expires_at", Math.floor(Date.now() / 1000) + token.expires_in);
+
+        window.location.href = home + "/form";
+    }
 }
