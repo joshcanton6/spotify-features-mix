@@ -45,6 +45,7 @@ async function redirect() {
             (json) => JSON.parse(JSON.stringify(json))
         );
 
+        console.log(token);
         sessionStorage.setItem("access_token", token["access_token"]);
         sessionStorage.setItem("refresh_token", token["refresh_token"]);
         sessionStorage.setItem("expires_at", Math.floor(Date.now() / 1000) + token["expires_in"]);
