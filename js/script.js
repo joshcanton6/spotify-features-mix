@@ -31,7 +31,7 @@ async function redirect() {
 
         var token = await fetch("https://accounts.spotify.com/api/token", {
             method: "POST",
-            body: JSON.stringify({
+            form: JSON.stringify({
                 "grant_type": "authorization_code",
                 "code": urlParams.get("code"),
                 "redirect_uri": redirect_uri
