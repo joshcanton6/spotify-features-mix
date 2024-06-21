@@ -31,12 +31,9 @@ async function redirect() {
 
         var token = await fetch("https://accounts.spotify.com/api/token", {
             method: "POST",
-            body: "grant_type=authorization_code&code=" + urlParams.get("code") + "&redirect_uri=" + encodeURIComponent(redirect_uri),
-            // body: JSON.stringify({
-            //     grant_type: "authorization_code",
-            //     code: urlParams.get("code"),
-            //     redirect_uri: redirect_uri
-            // }),
+            body: "grant_type=authorization_code" +
+                "&code=" + urlParams.get("code") +
+                "&redirect_uri=" + encodeURIComponent(redirect_uri),
             headers: {
                 "content-type": "application/x-www-form-urlencoded",
                 "Authorization": "Basic " + btoa(client_id + ":51ec60463d874c4c906640ee91c4146d")
@@ -47,7 +44,6 @@ async function redirect() {
             (json) => JSON.parse(JSON.stringify(json))
         );
 
-        console.log(token);
         sessionStorage.setItem("access_token", token["access_token"]);
         sessionStorage.setItem("refresh_token", token["refresh_token"]);
         sessionStorage.setItem("expires_at", Math.floor(Date.now() / 1000) + token["expires_in"]);
