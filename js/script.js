@@ -27,7 +27,7 @@ async function redirect() {
     }
 
     if (urlParams.has("code")) {
-        document.getElementById("redirect_message").innerHTML = "Successful redirect";
+        document.getElementById("redirect_message").innerHTML = "Login successful, redirecting...";
 
         var token = await fetch("https://accounts.spotify.com/api/token", {
             method: "POST",
