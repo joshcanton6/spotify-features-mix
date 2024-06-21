@@ -4,26 +4,14 @@
     --spotify-black: #191414;
 }
 
+a {
+    color: var(--spotify-green);
+}
+
 body {
     background-color: var(--spotify-black);
     color: var(--spotify-white);
     font-family: sans-serif;
-}
-
-.container {
-    padding-bottom: 150px;
-}
-
-.center-content-narrow {
-    margin: auto;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    text-align: center;
-    width: 40%;
-}
-
-.p-home {
-    font-size: 25px;
 }
 
 .button {
@@ -35,6 +23,18 @@ body {
     padding: 25px;
     text-align: center;
     text-decoration: none;
+}
+
+.center-content-narrow {
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    width: 40%;
+}
+
+.container {
+    padding-bottom: 150px;
 }
 
 footer {
@@ -55,6 +55,15 @@ h1 {
     font-size: 40px;
 }
 
-a {
-    color: var(--spotify-green);
+.p-home {
+    font-size: 25px;
+}
+
+.two-columns {
+    width: calc(100% / 2);
+}
+
+.wide-table {
+    width: 90%;
+    margin: auto;
 }
