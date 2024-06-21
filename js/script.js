@@ -47,5 +47,7 @@ async function redirect() {
         sessionStorage.setItem("access_token", token["access_token"]);
         sessionStorage.setItem("refresh_token", token["refresh_token"]);
         sessionStorage.setItem("expires_at", Math.floor(Date.now() / 1000) + token["expires_in"]);
+
+        window.location.href = home + "/form";
     }
 }
