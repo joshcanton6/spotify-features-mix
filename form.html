@@ -13,7 +13,47 @@
         <table class="wide-table">
             <tr>
                 <td class="two-columns">
-                    <h1><img src="img/Spotify_Icon_RGB_Green.png" alt="Spotify Icon, Green" style="vertical-align: middle" height="50px">Your Top Songs</h1>
+                    <h1><img src="img/Spotify_Icon_RGB_Green.png" alt="Spotify Icon, Green" style="vertical-align: middle" height="30px">Your Top Songs</h1>
+                    <div id="top-tracks">
+                        <!--
+                        Insert top tracks from script.js:
+
+                        <table>
+                            <tr>
+                                <td><img src="song['album']['images'][0]['url']" alt="song['album']['name']" height="100px"></td>
+                                <td>
+                                    <table>
+                                        <tr><p><b>song['name']</b></p></tr>
+                                        <tr><p><i>song['artists'][n]['name']</i></p></tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        -->
+                    </div>
+                </td>
+                <td class="two-columns">
+                    <form action="javascript:script.generatePlaylist()" method="POST">
+                        <h2>Time Range:</h2>
+                        <table class="inner-table">
+                            <tr>
+                                <td class="three-columns"><input type="radio" id="long_term" name="time_range" value="long_term"></td>
+                                <td class="three-columns"><input type="radio" id="medium_term" name="time_range" value="medium_term"></td>
+                                <td class="three-columns"><input type="radio" id="short_term" name="time_range" value="short_term"></td>
+                            </tr>
+                        </table>
+                        <h2>Genres:</h2>
+                        <p>Select up to 4</p>
+                        <table class="inner-table" id="genre-table">
+                            <!--
+                            Insert genres from script.js
+                            -->
+                        </table>
+                        <br><br>
+                        <div style="text-align: center">
+                            <button type="submit" class="form-submit-button">Create Playlist</button>
+                        </div>
+                    </form>
                 </td>
             </tr>
         </table>
