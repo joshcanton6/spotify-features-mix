@@ -52,6 +52,14 @@ async function redirect() {
     }
 }
 
+function insertTopTracks() {
+    alert("top tracks");
+}
+
+function insertGenres() {
+    alert("genres");
+}
+
 function generatePlaylist() {
-    alert("Debug");
+    alert("generate playlist");
 }
