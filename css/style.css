@@ -51,8 +51,26 @@ footer {
     margin: auto;
 }
 
+.form-submit-button {
+    background-color: var(--spotify-green);
+    border-radius: 50px;
+    color: var(--spotify-white);
+    font-size: 25px;
+    font-weight: bold;
+    padding: 25px;
+    text-align: center;
+    text-decoration: none;
+    border-style: none;
+    text-shadow: none;
+    cursor: pointer;
+}
+
 h1 {
     font-size: 40px;
+}
+
+.inner-table {
+    width: 100%;
 }
 
 .p-home {
