@@ -14,23 +14,21 @@
             <tr>
                 <td class="two-columns">
                     <h1><img src="img/Spotify_Icon_RGB_Green.png" alt="Spotify Icon, Green" style="vertical-align: middle" height="40px">Your Top Songs</h1>
-                    <div id="top-tracks">
+                    <table id="top-tracks">
                         <!--
                         Insert top tracks from script.js:
 
-                        <table>
-                            <tr>
-                                <td><img src="song['album']['images'][0]['url']" alt="song['album']['name']" height="100px"></td>
-                                <td>
-                                    <table>
-                                        <tr><p><b>song['name']</b></p></tr>
-                                        <tr><p><i>song['artists'][n]['name']</i></p></tr>
-                                    </table>
-                                </td>
-                            </tr>
-                        </table>
+                        <tr>
+                            <td><img src="song['album']['images'][0]['url']" alt="song['album']['name']" height="100px"></td>
+                            <td>
+                                <table>
+                                    <tr><p><b>song['name']</b></p></tr>
+                                    <tr><p><i>song['artists'][n]['name']</i></p></tr>
+                                </table>
+                            </td>
+                        </tr>
                         -->
-                    </div>
+                    </table>
                 </td>
                 <td class="two-columns">
                     <form action="javascript:generatePlaylist()" method="POST">
@@ -46,7 +44,11 @@
                         <p>Select up to 4</p>
                         <table class="inner-table" id="genre-table">
                             <!--
-                            Insert genres from script.js
+                            Insert genres from script.js:
+                            
+                            <tr>
+                                <td class="four-columns"><input type="checkbox" name="seed_genres" class="genre" id="seed" value="seed"><label for="seed">Genre</label></td>
+                            </tr>
                             -->
                         </table>
                         <br><br>
