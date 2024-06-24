@@ -51,3 +51,7 @@ async function redirect() {
         window.location.href = home + "/form";
     }
 }
+
+function generatePlaylist() {
+    alert("Debug");
+}
