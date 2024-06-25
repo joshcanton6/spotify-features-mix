@@ -185,21 +185,22 @@ function insertTopTracks() {
 }
 
 function insertGenres() {
-    alert("genres");
-
-    const genreTable = document.getElementById("genre-table");
+    var innerHTML = "";
     var n = 0;
+
     for (var seed in genres) {
         if (n % 4 == 0) {
             if (n != 0) {
-                genreTable.innerHTML += "</tr>";
+                innerHTML += "</tr>";
             }
-            genreTable.innerHTML += "<tr>"
+            innerHTML += "<tr>"
         }
-        genreTable.innerHTML += '<td class="four-columns"><input type="checkbox" name="seed_genres" class="genre" id="' + seed + '" value="seed"><label for="' + seed + '">' + genres[seed] + '</label></td>'
-    n++;
+        innerHTML += '<td class="four-columns"><input type="checkbox" name="seed_genres" class="genre" id="' + seed + '" value="seed"><label for="' + seed + '">' + genres[seed] + '</label></td>'
+        n++;
     }
-    genreTable.innerHTML += "</tr>"
+    innerHTML += "</tr>"
+
+    document.getElementById("genre-table").innerHTML = innerHTML;
 }
 
 function generatePlaylist() {
