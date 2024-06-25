@@ -181,7 +181,7 @@ async function redirect() {
 }
 
 function insertTopTracks() {
-    alert("top tracks");
+    
 }
 
 function insertGenres() {
@@ -204,5 +204,5 @@ function insertGenres() {
 }
 
 function generatePlaylist() {
-    alert("generate playlist");
+    alert("Sorry, still working on it");
 }
