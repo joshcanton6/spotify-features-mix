@@ -197,6 +197,7 @@ function insertGenres() {
             genreTable.innerHTML += "<tr>"
         }
         genreTable.innerHTML += '<td class="four-columns"><input type="checkbox" name="seed_genres" class="genre" id="' + seed + '" value="seed"><label for="' + seed + '">' + genres[seed] + '</label></td>'
+    n++;
     }
     genreTable.innerHTML += "</tr>"
 }
