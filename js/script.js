@@ -180,8 +180,21 @@ async function redirect() {
     }
 }
 
+async function getTopTracks() {
+    var songs = await fetch("https://api.spotify.com/v1/me/top/tracks?limit=50&time_range=" + (sessionStorage.getItem("time_range") ? sessionStorage.getItem("time_range") : "long_term"), {
+        method: "GET",
+        headers: "Authorization: Bearer " + sessionStorage.getItem("access_token")
+    }).then(
+        (response) => response.json()
+    );
+
+    return songs;
+}
+
 function insertTopTracks() {
-    
+    var songs = getTopTracks()
+
+    console.log(songs);
 }
 
 function insertGenres() {
