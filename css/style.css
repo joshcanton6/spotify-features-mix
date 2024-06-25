@@ -65,6 +65,10 @@ footer {
     cursor: pointer;
 }
 
+.four-columns {
+    width: calc(100% / 4);
+}
+
 h1 {
     font-size: 40px;
 }
@@ -75,6 +79,10 @@ h1 {
 
 .p-home {
     font-size: 25px;
+}
+
+.three-columns {
+    width: calc(100% / 3);
 }
 
 .two-columns {
