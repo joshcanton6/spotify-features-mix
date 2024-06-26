@@ -125,7 +125,7 @@ async function insertGenres() {
             }
             innerHTML += "<tr>"
         }
-        innerHTML += '<td class="four-columns"><input type="checkbox" name="seed_genres" class="seed" id="' + seed + '" value="' + seed + '"><label for="' + seed + '" onclick="seedQuery();">' + genres[seed] + '</label></td>'
+        innerHTML += '<td class="four-columns"><input type="checkbox" name="seed_genres" class="seed" id="' + seed + '" value="' + seed + '"><label for="' + seed + '" onclick="seedQuery(' + seed + '));">' + genres[seed] + '</label></td>'
         n++;
     }
     innerHTML += "</tr>"
@@ -133,9 +133,9 @@ async function insertGenres() {
     document.getElementById("genre-table").innerHTML = innerHTML;
 }
 
-function seedQuery() {
+function seedQuery(seed) {
     if (document.querySelectorAll(".seed:checked").length > 5) {
-        return false;
+        document.getElementById(seed).setAttribute("checked", false);
     }
 }
 
