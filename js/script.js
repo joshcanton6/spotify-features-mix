@@ -67,8 +67,8 @@ async function getTopTracks() {
     return songs;
 }
 
-function insertTopTracks() {
-    var songs = getTopTracks()
+async function insertTopTracks() {
+    var songs = await getTopTracks()
 
     console.log(songs);
 }
