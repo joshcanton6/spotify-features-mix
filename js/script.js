@@ -68,6 +68,12 @@ async function getTopTracks() {
 }
 
 async function insertTopTracks() {
+    if (sessionStorage.getItem("time_range")) {
+        document.getElementById(sessionStorage.getItem("time_range")).checked = true;
+    } else {
+        document.getElementById("long_term").checked = true;
+    }
+
     var topTracks = await getTopTracks();
     var innerHTML = "";
 
@@ -127,11 +133,6 @@ async function insertGenres() {
     document.getElementById("genre-table").innerHTML = innerHTML;
 }
 
-function loadSelectors() {
-    if (sessionStorage.getItem("time_range")) {
-        document.getElementById(sessionStorage.getItem("time_range")).checked = true;
-    } else {
-        document.getElementById("long_term").checked = true;
     }
 }
 
