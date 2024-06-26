@@ -97,7 +97,18 @@ async function insertTopTracks() {
     document.getElementById("top-tracks").innerHTML = innerHTML;
 }
 
+async function setTimeRange(time_range) {
+    sessionStorage.setItem("time_range", time_range);
+    insertTopTracks();
+}
+
 async function insertGenres() {
+    if (sessionStorage.getItem("time_range")) {
+        document.getElementById(sessionStorage.getItem("time_range")).checked = true;
+    } else {
+        document.getElementById("long_term").checked = true;
+    }
+
     const genres = await fetch(home + "/api/genres.json").then(
         (response) => response.json()
     ).then(
