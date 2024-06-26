@@ -60,6 +60,8 @@ async function getTopTracks() {
         }
     }).then(
         (response) => response.json()
+    ).then(
+        (json) => JSON.parse(JSON.stringify(json))
     );
 
     return songs;
