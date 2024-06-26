@@ -72,12 +72,12 @@ async function insertTopTracks() {
     var innerHTML = "";
 
     for (let t = 0; t < topTracks["items"].length; t++) {
-        var track = topTracks["items"][t];
-        var imageURL = track["album"]["images"][0]["url"];
-        var albumName = track["album"]["name"];
-        var artists = [];
+        let track = topTracks["items"][t];
+        let imageURL = track["album"]["images"][0]["url"];
+        let albumName = track["album"]["name"];
+        let artists = [];
         for (let a = 0; a < track["artists"].length; a++) {
-            var artist = track["artists"][a];
+            let artist = track["artists"][a];
             artists.push(artist["name"]);
         }
 
