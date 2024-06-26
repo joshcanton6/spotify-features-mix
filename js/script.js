@@ -125,7 +125,7 @@ async function insertGenres() {
             }
             innerHTML += "<tr>"
         }
-        innerHTML += '<td class="four-columns"><input type="checkbox" name="seed_genres" class="seed" id="' + seed + '" value="' + seed + '"><label for="' + seed + '" onclick="seedQuery(' + seed + '));">' + genres[seed] + '</label></td>'
+        innerHTML += '<td class="four-columns"><input type="checkbox" name="seed_genres" class="seed" id="' + seed + '" value="' + seed + '"><label for="' + seed + '" onclick="seedQuery(' + seed + ');">' + genres[seed] + '</label></td>'
         n++;
     }
     innerHTML += "</tr>"
