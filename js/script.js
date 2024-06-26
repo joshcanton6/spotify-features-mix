@@ -133,14 +133,6 @@ function loadSelectors() {
     } else {
         document.getElementById("long_term").checked = true;
     }
-
-    // document.querySelectorAll(".seed").forEach(function(checkbox) {
-    //     checkbox.onclick = function() {
-    //         if (document.querySelectorAll(".seed:checked").length > 5) {
-    //             return false;
-    //         }
-    //     }
-    // });
 }
 
 function generatePlaylist() {
