@@ -72,6 +72,8 @@ async function insertTopTracks() {
     var innerHTML = "";
 
     for (track in topTracks["items"]) {
+        var imageURL = track["album"]["images"][0]["url"];
+        var albumName = track["album"]["name"];
         var artists = [];
         for (var artist in track["artists"]) {
             artists.push(artist["name"]);
@@ -79,7 +81,7 @@ async function insertTopTracks() {
 
         innerHTML += `
             <tr>
-                <td><img src="${track["album"]["images"][0]["url"]}" alt="${track["album"]["name"]}" height="100px"></td>
+                <td><img src="${imageURL}" alt="${albumName}" height="100px"></td>
                 <td>
                     <table>
                         <tr><p><b>&emsp;${track["name"]}</b></p></tr>
