@@ -68,9 +68,29 @@ async function getTopTracks() {
 }
 
 async function insertTopTracks() {
-    var topTracks = await getTopTracks()
+    var topTracks = await getTopTracks();
+    var innerHTML = "";
 
-    console.log(topTracks["items"]);
+    for (track in topTracks["items"]) {
+        var artists = [];
+        for (var artist in track["artists"]) {
+            artists.push(artist["name"]);
+        }
+
+        innerHTML += `
+            <tr>
+                <td><img src="${track["album"]["images"][0]["url"]}" alt="${track["album"]["name"]}" height="100px"></td>
+                <td>
+                    <table>
+                        <tr><p><b>&emsp;${track["name"]}</b></p></tr>
+                        <tr><p><i>&emsp;${artists.join(", ")}</i></p></tr>
+                    </table>
+                </td>
+            </tr>
+        `
+    }
+
+    document.getElementById("top-tracks").innerHTML = innerHTML;
 }
 
 async function insertGenres() {
