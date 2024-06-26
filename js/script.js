@@ -128,22 +128,19 @@ async function insertGenres() {
 }
 
 function loadSelectors() {
-    document.addEventListener("DOMContentLoaded", function() {
-        if (sessionStorage.getItem("time_range")) {
-            document.getElementById(sessionStorage.getItem("time_range")).checked = true;
-        } else {
-            document.getElementById("long_term").checked = true;
-        }
+    if (sessionStorage.getItem("time_range")) {
+        document.getElementById(sessionStorage.getItem("time_range")).checked = true;
+    } else {
+        document.getElementById("long_term").checked = true;
+    }
 
-        document.querySelectorAll(".seed").forEach(function(checkbox) {
-            checkbox.onclick = function() {
-                if (document.querySelectorAll(".seed:checked").length > 5) {
-                    return false;
-                }
+    document.querySelectorAll(".seed").forEach(function(checkbox) {
+        checkbox.onclick = function() {
+            if (document.querySelectorAll(".seed:checked").length > 5) {
+                return false;
             }
-        });
-    })
-    
+        }
+    });
 }
 
 function generatePlaylist() {
