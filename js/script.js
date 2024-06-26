@@ -53,7 +53,7 @@ async function redirect() {
 }
 
 async function getTopTracks() {
-    var songs = await fetch("https://api.spotify.com/v1/me/top/tracks?limit=50&time_range=" + (sessionStorage.getItem("time_range") ? sessionStorage.getItem("time_range") : "long_term"), {
+    var topTracks = await fetch("https://api.spotify.com/v1/me/top/tracks?limit=50&time_range=" + (sessionStorage.getItem("time_range") ? sessionStorage.getItem("time_range") : "long_term"), {
         method: "GET",
         headers: {
             "Authorization": "Bearer " + sessionStorage.getItem("access_token")
@@ -64,13 +64,13 @@ async function getTopTracks() {
         (json) => JSON.parse(JSON.stringify(json))
     );
 
-    return songs;
+    return topTracks;
 }
 
 async function insertTopTracks() {
-    var songs = await getTopTracks()
+    var topTracks = await getTopTracks()
 
-    console.log(songs);
+    console.log(topTracks["items"]);
 }
 
 async function insertGenres() {
