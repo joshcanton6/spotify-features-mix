@@ -25,6 +25,14 @@ body {
     text-decoration: none;
 }
 
+.center {
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    width: 40%;
+}
+
 .center-content-narrow {
     margin: auto;
     padding-top: 50px;
@@ -51,6 +59,11 @@ footer {
     margin: auto;
 }
 
+.footer-table {
+    width: 80%;
+    margin: 0px auto;
+}
+
 .form-submit-button {
     background-color: var(--spotify-green);
     border-radius: 50px;
@@ -73,12 +86,25 @@ h1 {
     font-size: 40px;
 }
 
+h2 {
+    font-size: 25px;
+    font-weight: normal;
+}
+
 .inner-table {
     width: 100%;
 }
 
+p {
+    font-size: 16px;
+}
+
 .p-home {
     font-size: 25px;
+}
+
+td {
+    vertical-align: top;
 }
 
 .three-columns {
