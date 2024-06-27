@@ -125,7 +125,7 @@ async function insertGenres() {
             }
             innerHTML += "<tr>"
         }
-        innerHTML += `<td class="four-columns"><input type="checkbox" name="seed_genres" class="seed" id="${seed}" value="${seed}"><label for="${seed}" onclick="seedQuery('${seed}');">${genres[seed]}</label></td>`
+        innerHTML += `<td class="four-columns"><input type="checkbox" name="seed_genres" class="seed" id="${seed}" value="${seed}"><label for="${seed}">${genres[seed]}</label></td>`
         n++;
     }
     innerHTML += "</tr>"
@@ -133,12 +133,10 @@ async function insertGenres() {
     document.getElementById("genre-table").innerHTML = innerHTML;
 }
 
-function seedQuery(seed) {
-    if (document.querySelectorAll(".seed:checked").length > 5) {
-        document.getElementById(seed).setAttribute("checked", false);
-    }
-}
-
 function generatePlaylist() {
-    alert("Sorry, still working on it");
+    if (document.querySelectorAll(".seed:checked").length > 5) {
+        alert("More than 5 seeds are selected. Up to 5 seed values may be provided in any combination of artists, tracks and genres.")
+    } else {
+        alert("Sorry, still working on it");
+    }
 }
