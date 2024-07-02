@@ -146,8 +146,24 @@ async function generatePlaylist() {
         }
 
         var trackIds = trackIdArr.join(",");
+        var trackFeatures = await getTrackFeatures();
     } else { // remove alert when ready to deploy
         alert("Sorry, still working on it");
         return;
     }
+}
+
+async function getTrackFeatures() {
+    var trackFeatures = await fetch("https://api.spotify.com/v1/audio-features?ids" + trackIds, {
+        method: "GET",
+        headers: {
+            "Authorization": "Bearer " + sessionStorage.getItem("access_token")
+        }
+    }).then(
+        (response) => response.json()
+    ).then(
+        (json) => JSON.parse(JSON.stringify(json))
+    );
+
+    return trackFeatures;
 }
