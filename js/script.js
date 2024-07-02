@@ -147,6 +147,7 @@ async function generatePlaylist() {
 
         var trackIds = trackIdArr.join(",");
         var trackFeatures = await getTrackFeatures();
+        var targetTrackFeatures = calculateTargetTrackFeatures(trackFeatures);
     } else { // remove alert when ready to deploy
         alert("Sorry, still working on it");
         return;
@@ -166,4 +167,29 @@ async function getTrackFeatures() {
     );
 
     return trackFeatures;
+}
+
+function calculateTargetTrackFeatures(trackFeatures) {
+    var targetTrackFeatures = {};
+    const featureTypes = ["danceability", "energy", "loudness", "acousticness", "valence", "tempo"];
+
+    for (let f in featureTypes) {
+        targetTrackFeatures["minimum_" + featureTypes[f]] = Number.MAX_SAFE_INTEGER;
+        targetTrackFeatures["maximum_" + featureTypes[f]] = Number.MIN_SAFE_INTEGER;
+        let total = 0;
+
+        for (let t in trackFeatures["audio_features"]) {
+            if (t[f] < targetTrackFeatures["minimum_" + f]) {
+                targetTrackFeatures["minimum_" + f] = t[f];
+            } else if (t[f] > targetTrackFeatures["maximum_" + f]) {
+                targetTrackFeatures["maximum_" + f] = t[f];
+            }
+
+            total += t[f];
+        }
+
+        targetTrackFeatures["average_" + f] = total / trackFeatures["audio_features"].length;
+    }
+
+    return targetTrackFeatures;
 }
