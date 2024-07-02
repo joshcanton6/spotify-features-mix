@@ -133,10 +133,21 @@ async function insertGenres() {
     document.getElementById("genre-table").innerHTML = innerHTML;
 }
 
-function generatePlaylist() {
+async function generatePlaylist() {
     if (document.querySelectorAll(".seed:checked").length > 5) {
         alert("More than 5 seeds are selected. Up to 5 seed values may be provided in any combination of artists, tracks and genres.")
-    } else {
+    } else if (false) { // remove false when ready to deploy
+        var topTracks = await getTopTracks();
+        var trackIdArr = [];
+
+        for (let t = 0; t < topTracks["items"].length; t++) {
+            let track = topTracks["items"][t];
+            trackIdArr.push(track["id"]);
+        }
+
+        var trackIds = trackIdArr.join(",");
+    } else { // remove alert when ready to deploy
         alert("Sorry, still working on it");
+        return;
     }
 }
