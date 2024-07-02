@@ -148,6 +148,7 @@ async function generatePlaylist() {
         var trackIds = trackIdArr.join(",");
         var trackFeatures = await getTrackFeatures();
         var targetTrackFeatures = calculateTargetTrackFeatures(trackFeatures);
+        createSpotifyPlaylist();
     } else { // remove alert when ready to deploy
         alert("Sorry, still working on it");
         return;
@@ -192,4 +193,15 @@ function calculateTargetTrackFeatures(trackFeatures) {
     }
 
     return targetTrackFeatures;
+}
+
+function createSpotifyPlaylist() {
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const date = new Date();
+    var currentDate = months[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear();
+
+    var playlistName = "Spotify Features Mix " + currentDate;
+    var playlistDescription = "Personalized playlist curated just for you based on your listening history. Enjoy!"
+
+    
 }
